@@ -1,30 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="contentAPP">
+    <global-head></global-head>
+    <div class="appMain">
+      <router-view/>
+    </div>
+    <global-foot></global-foot>
   </div>
-  <router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import GlobalHead from '@/components/global/GlobalHead.vue'
+import GlobalFoot from '@/components/global/GlobalFoot.vue'
+export default {
+  components: { GlobalHead, GlobalFoot },
 
-#nav {
-  padding: 30px;
+  setup () {
+    return {}
+  }
 }
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+<style lang="scss" scoped>
+.contentAPP {
+  height: 100vh;
+  overflow: hidden;
+  .appMain {
+    height: calc(100% - 195px);
+    overflow: auto;
+  }
 }
 </style>
