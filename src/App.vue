@@ -24,6 +24,10 @@ export default {
 .contentAPP {
   height: 100vh;
   overflow: hidden;
+
+
+
+  
   .appMain {
     height: calc(100% - 195px);
     overflow: auto;
